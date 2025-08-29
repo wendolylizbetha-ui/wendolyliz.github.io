@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Página Completa Funcional</title>
+  <style>
+    body {
+
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f8ff;
+      text-align: center;
+    }
+
+    /* Menú de navegación */
+    nav {
+      background-color: darkblue;
+      padding: 10px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 10px;
+    }
+    nav ul li a:hover {
+      background-color: royalblue;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 50px;
+    }
+
+    h1 {
+      color: darkblue;
+    }
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* Galería */
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+    .galeria img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      border: 3px solid darkblue;
+      transition: transform 0.3s;
+    }
+    .galeria img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Formulario */
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px;
+      background-color: darkblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: royalblue;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menú -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Secciones -->
+  <section id="inicio">
+    <h1>Bienvenido a mi página</h1>
+    <p>Esta es mi primera página web completa hecha en HTML, CSS y JavaScript.</p>
+  </section>
+
+  <section id="sobre-mi">
+    <h1>Sobre mí</h1>
+    <p>Aquí puedo escribir sobre mis hobbies, estudios y cosas que me gustan.</p>
+  </section>
+
+  <section id="galeria">
+    <h1>Galería</h1>
+    <div class="galeria">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Programación 1">
+      <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=800&q=80" alt="Programación 2">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Playa 1">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Playa 2">
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h1>Contacto</h1>
+    <form>
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea placeholder="Escribe tu mensaje" rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    const formulario = document.querySelector("form");
+    formulario.addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("¡Gracias por tu mensaje! 😊");
+      formulario.reset();
+    });
+    const botonColor = document.getElementById("cambiarColor");
+
+botonColor.addEventListener("click", function() {
+  // Colores brillantes y llamativos
+  const colores = ["#FF5733", "#33FF57", "#3357FF", "#FF33FF", "#FFFF33", "#33FFFF"];
+  const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+  document.body.style.backgroundColor = colorAleatorio;
+});
+  </script>
+<button id="cambiarColor">Cambiar color de fondo</button>
+ 
+</body>
+</html>
